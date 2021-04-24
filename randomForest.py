@@ -3,14 +3,20 @@
 #Professor: Dibio Leandro Borges
 #Aluno: William Coelho da Silva - 180029274
 
+#Necessario executar:
+#pip install xlrd 
+#pip install openpyxl
+
 #Importando bibliotecas necessarias
 import pandas as pd
 
 #Le a base de dados
 
-dataset1 = pd.read
-dataset1.head()
-dataset1.info()
+dataset = pd.read_excel('dataset.xlsx', engine='openpyxl')
+
+dataset.head()
+dataset.info()
+
 
 
 
