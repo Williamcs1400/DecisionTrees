@@ -8,14 +8,26 @@ import pandas as pd
 from chefboost import Chefboost as chef
 import gc
 
-df = pd.read_csv('HC_PACIENTES_1.csv')
-df.head()
+#Le a base de dados
+dataset = pd.read_excel('dataset.xlsx', engine='openpyxl')
 
-df.info()
 config = {'algorithm': 'C4.5'}
-chef.fit(pd.read_csv("HC_PACIENTES_1.csv"), config)
+model = chef.fit(dataset.copy(), config)
 
-gc.collect()
+for ind, istance in dataset.iterrows():
+    prediction = chef.predict(model, dataset.iloc[0])
+    actual = istance['Decison']
+    if actual == prediction:
+        classified = True
+    else:
+        cclassified = False
+        print("x", end='')
+    
+    print(actual, " - ", prediction)
+
+
+
+#gc.collect()
 
 
 
