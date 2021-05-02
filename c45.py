@@ -8,6 +8,8 @@ import pandas as pd
 from chefboost import Chefboost as chef
 import gc
 
+print('\nDecisionTree C4.5\n\n')
+
 #Le a base de dados
 dataset = pd.read_excel('dataset.xlsx', engine='openpyxl')
 

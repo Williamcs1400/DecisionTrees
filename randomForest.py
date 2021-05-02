@@ -12,6 +12,9 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 
+
+print('\nRandom Forest:\n\n')
+
 #Le a base de dados
 dataset = pd.read_excel('dataset.xlsx', engine='openpyxl')
 
@@ -45,7 +48,7 @@ baselinePreds = testDataset[:, datasetList.index('resultado do exame')]
 baselineErrors = abs(baselinePreds - testLabels)
 
 print(baselinePreds)
-print('Average baseline error: ', round(np.mean(baselineErrors), 2))
+print('Margem de erro: ', round(np.mean(baselineErrors), 2))
 
 
 
