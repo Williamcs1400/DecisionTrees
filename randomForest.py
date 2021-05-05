@@ -11,6 +11,9 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
+import seaborn as sns
+#import pydot
 
 
 print('\nRandom Forest:\n\n')
@@ -51,7 +54,37 @@ print(baselinePreds)
 print('Margem de erro: ', round(np.mean(baselineErrors), 2))
 
 
+#analise exploratoria
+def analise():
+
+    print('\n\n Análise exploratória: \n\n')
+
+    dataset = pd.read_excel('dataset.xlsx', engine='openpyxl')
+    dataset.columns
+
+    dataset[['resultado do exame', 'Patient addmited to regular ward (1=yes, 0=no)', 
+    'Patient addmited to semi-intensive unit (1=yes, 0=no)', 
+    'Patient addmited to intensive care unit (1=yes, 0=no)', 'Hematocrit',
+    'Hemoglobin', 'Platelets', 'Red blood Cells', 'Lymphocytes', 'Leukocytes',
+    'Basophils', 'Eosinophils', 'Mean corpuscular volume (MCV)', 'Monocytes', 'Red blood cell distribution width (RDW)',
+    'Influenza A', 'Influenza B', 'Parainfluenza 1', 'CoronavirusNL63']].hist(bins=20, figsize=(15,15))
+    plt.show()
+
+    Continous_var = ['resultado do exame', 'Patient addmited to regular ward (1=yes, 0=no)', 
+    'Patient addmited to semi-intensive unit (1=yes, 0=no)', 
+    'Patient addmited to intensive care unit (1=yes, 0=no)', 'Hematocrit',
+    'Hemoglobin', 'Platelets', 'Red blood Cells', 'Lymphocytes', 'Leukocytes',
+    'Basophils', 'Eosinophils', 'Mean corpuscular volume (MCV)', 'Monocytes', 'Red blood cell distribution width (RDW)',
+    'Influenza A', 'Influenza B', 'Parainfluenza 1', 'CoronavirusNL63']
+
+    dataset[Continous_var].describe()
+
+    dataset['result'] = dataset['resultado do exame'].replace({0: "negative", 1:"positive"})
+    dataset['resp'] = dataset['Respiratory Syncytial Virus'].replace({0: "not_detected", 1:"detected"})
 
 
+
+
+analise()
 
 
