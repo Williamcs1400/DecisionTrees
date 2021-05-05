@@ -35,5 +35,6 @@ for i, x in enumerate(testLabels):
 baselinePreds = testDataset[:, datasetList.index('resultado do exame')]
 baselineErrors = abs(baselinePreds - testLabels)
 
-print(baselinePreds)
+print('Preds: ', baselinePreds)
+print('Result: ', testLabels)
 print('Margem de erro: ', round(np.mean(baselineErrors), 2))
