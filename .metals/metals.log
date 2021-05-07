@@ -1,0 +1,13 @@
+[0m2021.05.07 09:45:18 INFO  Started: Metals version 0.10.2 in workspace '/home/william/Área de Trabalho/William/IIA/Trabalho2' for client vscode 1.56.0.[0m
+[0m2021.05.07 09:45:22 INFO  time: initialize in 3.46s[0m
+[0m2021.05.07 09:45:23 WARN  Build server is not auto-connectable.[0m
+[0m2021.05.07 09:45:23 WARN  no build tool detected in workspace '/home/william/Área de Trabalho/William/IIA/Trabalho2'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+mai 07, 2021 6:29:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMAÇÕES: Unsupported notification method: $/setTraceNotification
+mai 07, 2021 7:01:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMAÇÕES: Unsupported notification method: $/setTraceNotification
+mai 07, 2021 7:01:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMAÇÕES: Unsupported notification method: $/setTraceNotification
+mai 07, 2021 7:02:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMAÇÕES: Unsupported notification method: $/setTraceNotification
+[0m2021.05.07 19:03:37 INFO  shutting down Metals[0m

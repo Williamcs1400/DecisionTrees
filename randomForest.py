@@ -101,16 +101,16 @@ def evaluate(model, test_features, test_labels):
 
 
 n_estimators = [int(x) for x in np.linspace(start = 200, stop = 2000, num = 10)]
-# Number of features to consider at every split
+# Número de recursos a serem considerados em cada divisão
 max_features = ['auto', 'sqrt']
-# Maximum number of levels in tree
+# Número máximo de níveis na árvore
 max_depth = [int(x) for x in np.linspace(10, 110, num = 11)]
 max_depth.append(None)
-# Minimum number of samples required to split a node
+# Número mínimo de amostras necessárias para dividir um nó
 min_samples_split = [2, 5, 10]
-# Minimum number of samples required at each leaf node
+# Número mínimo de amostras necessárias em cada nó folha
 min_samples_leaf = [1, 2, 4]
-# Method of selecting samples for training each tree
+# Método de seleção de amostras para treinar cada árvore
 bootstrap = [True, False]
 
 random_grid = {'n_estimators': n_estimators,
@@ -123,9 +123,9 @@ random_grid = {'n_estimators': n_estimators,
 rf = RandomForestRegressor()
 rf_random = RandomizedSearchCV(estimator = rf, param_distributions = random_grid, n_iter = 100, cv = 3, verbose=2, random_state=42, n_jobs = -1)
 base_model = RandomForestRegressor(n_estimators = 10, random_state = 42)
-base_model.fit(trainDataset, trainLabels)
+'''base_model.fit(trainDataset, trainLabels)
 base_accuracy = evaluate(base_model, testDataset, testLabels)
 best_random = rf_random.best_estimator_
-random_accuracy = evaluate(best_random, test_features, test_labels)
+random_accuracy = evaluate(best_random, test_features, test_labels)'''
 
 
